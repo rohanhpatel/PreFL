@@ -1,8 +1,8 @@
 import sys
 from lexer import tokenize
 
-def main():
+def run():
     progTokens = tokenize("prog.pf")
     print(progTokens)
 
-main()
+run()

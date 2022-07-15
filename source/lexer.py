@@ -1,11 +1,6 @@
 import sys
 
-# class TokenTypes:
-#     tokens = {"=": "ASSIGN", "+": "PLUS", "-": "MINUS", "*": "MULT", "/": "DIV", "%": "MOD", "^": "EXP", "+=": "PLUS_EQ",
-#     "-=": "MINUS_EQ", "*=": "MULT_EQ", "/=": "DIV_EQ", "%=": "MOD_EQ", "==": "EQ", "!=": "NEQ", "!": "NOT", "<": "LT", ">": "GT",
-#     "<=": "LTEQ", ">=": "GTEQ", '"': "DB_QUOTE", "'": "QUOTE", ";": "EOL", ",": "ARG_SEP", "(": "LPAREN", ")": "RPAREN" }
-    #KEYWORDS = ["if", "for", "while", "func", "class", "new", "show", "give"]
-
+## lexer is meant to tokenize the file and put meaning behind everything
 
 class Token:
     def __init__(self, type, value=None):
