@@ -64,8 +64,16 @@ def tokenize(fileName):
                 tmpTkArr.append(Token('LPAREN'))
             elif chr == ')':
                 tmpTkArr.append(Token('RPAREN'))
+            elif chr == '{':
+                tmpTkArr.append(Token('LBRACE'))
+            elif chr == '}':
+                tmpTkArr.append(Token('RBRACE'))
+            elif chr == '[':
+                tmpTkArr.append(Token('LBRACKET'))
+            elif chr == ']':
+                tmpTkArr.append(Token('RBRACKET'))
             elif chr == ';':
-                tmpTkArr.append(Token('EOL'))
+                tmpTkArr.append(Token('EOS'))
             elif chr == ',':
                 tmpTkArr.append(Token('SEP'))
             elif chr == '=': # could be = or ==
