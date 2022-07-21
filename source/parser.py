@@ -46,7 +46,7 @@ def parseTokens(fileName, debug):
             throwError(eolErr)
         lineCount += 1
     # check to see if parentheses are good or not
-    # first we can check to see if the number of closers and order is good
+    # first we can check to see if the parens are good and filled in
     missingClose = False
     parenArr = ['LPAREN', 'RPAREN', 'LBRACE', 'RBRACE', 'LBRACKET', 'RBRACKET']
     buildStr = []
@@ -65,3 +65,4 @@ def parseTokens(fileName, debug):
         missingClose = True
         for rem in buildStr:
             print("Missing pair for " + rem.type() + " at line " + str(rem.line()))
+    # now, we can check for 
