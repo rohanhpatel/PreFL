@@ -1,0 +1,2 @@
+Use EBNF for the grammar of the language
+	 - might have to modify the tokenizer, but the tokenizer should work similarly to how it works now

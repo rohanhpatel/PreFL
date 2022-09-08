@@ -3,7 +3,7 @@ from lexer import tokenize
 from parser import parseTokens
 
 def run(debug):
-    progTokens = parseTokens("prog.pf", debug)
+    progTokens = tokenize("prog.pf")
     if debug:
         print(progTokens)
 

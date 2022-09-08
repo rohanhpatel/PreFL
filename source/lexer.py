@@ -3,13 +3,17 @@ import sys
 ## lexer is meant to tokenize the file and put meaning behind everything
 
 class Token:
-    def __init__(self, type, value=None):
-        self.type = type
+    def __init__(self, typ, value=None):
+        self.type = typ
         self.val = value
     def __repr__(self):
         if self.val:
             return f'{self.type}: {self.val}'
         return f'{self.type}'
+    def isOperator(self):
+        if self.type == "ASSIGN" or self.type == "EQ" or self.type.find("GT") != -1 or self.type.find("LT") != -1 or self.type.find("PLUS") != -1 or self.type.find("MINUS") != -1 or self.type.find("MULT") != -1 or self.type.find("DIV") != -1 or self.type.find("MOD") != -1 or self.type.find("NOT") != -1:
+            return True
+        return False
 
 def isValidNumber(numStr):
     viableChars = "1234567890."

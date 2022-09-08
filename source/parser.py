@@ -1,5 +1,5 @@
 import sys
-from lexer import tokenize
+from lexer import tokenize, Token
 
 ## parser is meant to take the tokens and make sure that they're in the correct spots and such
 
@@ -26,6 +26,8 @@ class LineToken:
         return self.token.value
     def line(self):
         return self.lineNum
+    def isOperator(self):
+        return self.isOperator()
 
 def parseTokens(fileName, debug):
     tokenLines = tokenize(fileName)
@@ -65,4 +67,10 @@ def parseTokens(fileName, debug):
         missingClose = True
         for rem in buildStr:
             print("Missing pair for " + rem.type() + " at line " + str(rem.line()))
-    # now, we can check for 
+    # now, we can check for correct usage of operators
+    for t in range(len(orderedLineTokens)):
+        curLineToken = orderedLineTokens[t]
+        # initial check to see if LPAREN comes right after an operator type
+        if curLineToken.isOperator():
+            if orderedLineTokens[t+1].type() != "LPAREN":
+                throwError(Error("SyntaxError"), "Need ( after operator")
